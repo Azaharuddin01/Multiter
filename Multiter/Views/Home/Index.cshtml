@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CommanLayer.Models.Employees>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Address</th>
+        </tr>
+        
+        @foreach (var emp in Model)
+	{
+    <tr>
+        <td>@emp.Name</td>
+        <td>@emp.Email.</td>
+        <td>@emp.Mobile</td>
+        <td>@emp.Address</td>
+        <td>
+            <a asp-action="Update" asp-route-id="@emp.Id">Update</a>
+            <a asp-action="Delete" asp-route-id="@emp.Id">Delete</a>
+        </td>
+    </tr> 
+	}
+    </table>
+       
+</div>
+
+
